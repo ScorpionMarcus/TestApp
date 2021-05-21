@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SlayersComponent } from './slayers/slayers.component';
 import { SoundButtonComponent } from './sound-button/sound-button.component';
 import { SlayerDetailComponent } from './slayer-detail/slayer-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SlayersComponent,
     SoundButtonComponent,
-    SlayerDetailComponent
+    SlayerDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
