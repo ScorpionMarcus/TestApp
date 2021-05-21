@@ -1,0 +1,24 @@
+<div *ngIf="slayer">
+    <h2>{{slayer.name | uppercase}} Details</h2>
+    <ul>
+      <li>
+        <div><span>id: </span>{{slayer.id}}</div>
+      </li>
+      <li>
+        <div>
+          <label for="slayer-name">Slayer name: </label>
+          <input id="slayer-name" [(ngModel)]="slayer.name" placeholder="name">
+        </div>
+      </li>
+      <li *ngIf="slayer.swordColor">
+        <span>sword color: </span>{{slayer.swordColor}}
+      </li>
+      <li *ngIf="slayer.hashira">
+        <span>hashira: </span>{{slayer.hashira}}
+      </li>
+      <li *ngIf="slayer.breathingTechnique">
+        <span>breathing technique: </span>{{slayer.breathingTechnique}}
+      </li>
+    </ul>
+    <app-sound-button [sound]="slayer.slayerSound"></app-sound-button>
+</div>

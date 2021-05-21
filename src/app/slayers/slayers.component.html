@@ -1,0 +1,16 @@
+<h2>My Slayers</h2>
+<div class="slayer-container">
+  <div class="info">
+    <ul class="slayers">
+      <li *ngFor="let slayer of slayers" 
+        [class.selected]="slayer === selectedSlayer"
+        (click)="onSelect(slayer)">
+        <span class="badge">{{slayer.id}}</span> {{slayer.name}}
+      </li>
+    </ul>
+    <app-slayer-detail [slayer]="selectedSlayer"  class="details"></app-slayer-detail>
+  </div>
+  <div *ngIf="selectedSlayer" class="image-area">
+    <img src="{{selectedSlayer.image}}">
+  </div>
+</div>
