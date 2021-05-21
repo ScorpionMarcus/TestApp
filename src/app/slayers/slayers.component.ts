@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Slayer } from '../slayer';
-import { SLAYERS } from '../mock-slayers';
+import { SlayerService } from '../slayer.service';
 
 @Component({
   selector: 'app-slayers',
@@ -10,11 +10,16 @@ import { SLAYERS } from '../mock-slayers';
 export class SlayersComponent implements OnInit {
 
   selectedSlayer?: Slayer;
-  slayers = SLAYERS;
+  slayers: Slayer[] = [];
   
-  constructor() { }
+  constructor(private slayerService: SlayerService) { }
   
   ngOnInit(): void {
+    this.getSlayers();
+  }
+
+  getSlayers(): void {
+    this.slayers = this.slayerService.getSlayers();
   }
 
   onSelect(slayer: Slayer): void {
