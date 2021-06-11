@@ -1,28 +1,32 @@
-<form [formGroup]="newSlayer" (ngSubmit)="onSubmit()">
-    <p>
-        <input type="text" id="name" name="name" placeholder="Name" formControlName="name">
-    </p>
-    <p>
-        <input type="text" id="swordColor" name="swordColor" placeholder="Sword Color" formControlName="swordColor">
-    </p>
-    <p>
-        <input type="text" id="hashira" name="hashira" placeholder="Hashira" formControlName="hashira">
-    </p>
-    <p>
-        <input type="text" id="breathingTechnique" name="breathingTechnique" placeholder="Breathing Technique" formControlName="breathingTechnique">
-    </p>
-    <div formGroupName="slayerSound">
+<button (click)="toggle()">{{showform ? "Cancel" : "Add"}} Slayer</button>
+
+<div *ngIf="showform">
+    <form [formGroup]="newSlayer" (ngSubmit)="onSubmit()">
         <p>
-            <input type="text" id="audio" name="audio" placeholder="Audio" formControlName="audio">
+            <input type="text" id="name" name="name" placeholder="Name" formControlName="name">
         </p>
         <p>
-            <input type="text" id="buttonText" name="buttonText" placeholder="Button Text" formControlName="buttonText">
+            <input type="text" id="swordColor" name="swordColor" placeholder="Sword Color" formControlName="swordColor">
         </p>
-    </div>
-    <p>
-        <input type="text" id="image" name="image" placeholder="Image" formControlName="image">
-    </p>
-    <p>
-        <button type="submit">Submit</button>
-    </p>
-</form>
+        <p>
+            <input type="text" id="hashira" name="hashira" placeholder="Hashira" formControlName="hashira">
+        </p>
+        <p>
+            <input type="text" id="breathingTechnique" name="breathingTechnique" placeholder="Breathing Technique" formControlName="breathingTechnique">
+        </p>
+        <div formGroupName="slayerSound">
+            <p>
+                <input type="text" id="audio" name="audio" placeholder="Audio" formControlName="audio">
+            </p>
+            <p>
+                <input type="text" id="buttonText" name="buttonText" placeholder="Button Text" formControlName="buttonText">
+            </p>
+        </div>
+        <p>
+            <input type="text" id="image" name="image" placeholder="Image" formControlName="image">
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+</div>

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MessageService } from '../message.service';
 import { SLAYERS } from '../mock-slayers';
 
 @Component({
@@ -8,8 +9,10 @@ import { SLAYERS } from '../mock-slayers';
   styleUrls: ['./add-slayer.component.css']
 })
 export class AddSlayerComponent implements OnInit {
-  
-  constructor() { }
+
+  showform: boolean = false;
+
+  constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
@@ -27,18 +30,20 @@ export class AddSlayerComponent implements OnInit {
     image: new FormControl()
   })
 
-  getId() {
-    const newId = SLAYERS.length + 1;
-    console.log(newId);
-    return newId;
+  toggle() {
+    this.showform ? this.showform = false : this.showform = true;
   }
 
   onSubmit() {
     this.newSlayer.patchValue({
-      id: this.getId()
+      id: SLAYERS.length + 1
     });
 
-    SLAYERS.push(this.newSlayer.value);
+    if (this.newSlayer.controls.name.value !== null) {
+      SLAYERS.push(this.newSlayer.value);
+      this.messageService.add(`Added slayer named ${this.newSlayer.controls.name.value}`)
+    }
+
     this.newSlayer.reset();
   }
 
