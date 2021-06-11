@@ -1,0 +1,26 @@
+<form [formGroup]="newSlayer" (ngSubmit)="onSubmit()">
+    <!-- <p>
+        <input type="text" id="id" name="id" placeholder="id" formControlName="id" value="getId()">
+    </p> -->
+    <p>
+        <input type="text" id="name" name="name" placeholder="Name" formControlName="name">
+    </p>
+    <p>
+        <input type="text" id="swordColor" name="swordColor" placeholder="Sword Color" formControlName="swordColor">
+    </p>
+    <p>
+        <input type="text" id="hashira" name="hashira" placeholder="Hashira" formControlName="hashira">
+    </p>
+    <p>
+        <input type="text" id="breathingTechnique" name="breathingTechnique" placeholder="Breathing Technique" formControlName="breathingTechnique">
+    </p>
+    <p>
+        <input type="text" id="slayerSound" name="slayerSound" placeholder="Sound" formControlName="slayerSound">
+    </p>
+    <p>
+        <input type="text" id="image" name="image" placeholder="Image" formControlName="image">
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>

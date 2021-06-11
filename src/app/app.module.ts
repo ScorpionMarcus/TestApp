@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlayersComponent } from './slayers/slayers.component';
 import { SoundButtonComponent } from './sound-button/sound-button.component';
 import { SlayerDetailComponent } from './slayer-detail/slayer-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AddSlayerComponent } from './add-slayer/add-slayer.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,14 @@ import { MessagesComponent } from './messages/messages.component';
     SlayersComponent,
     SoundButtonComponent,
     SlayerDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    AddSlayerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
