@@ -37,8 +37,9 @@ export class AddSlayerComponent implements OnInit {
     this.newSlayer.patchValue({
       id: this.getId()
     });
-    
+
     SLAYERS.push(this.newSlayer.value);
+    this.newSlayer.reset();
   }
 
 }
