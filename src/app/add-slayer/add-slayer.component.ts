@@ -15,12 +15,15 @@ export class AddSlayerComponent implements OnInit {
   }
 
   newSlayer = new FormGroup({
-    //id: new FormControl().setValue(value: id),
+    id: new FormControl(),
     name: new FormControl(),
     swordColor: new FormControl(),
     hashira: new FormControl(),
     breathingTechnique: new FormControl(),
-    slayerSound: new FormControl(),
+    slayerSound: new FormGroup({
+      audio: new FormControl(),
+      buttonText: new FormControl()
+    }), 
     image: new FormControl()
   })
 
@@ -31,10 +34,11 @@ export class AddSlayerComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.newSlayer.value);
+    this.newSlayer.patchValue({
+      id: this.getId()
+    });
+    
     SLAYERS.push(this.newSlayer.value);
-    //this.newSlayer.controls[this.getId()].setValue(this.newSlayer {id})
   }
-
 
 }
