@@ -8,6 +8,7 @@ import { SoundButtonComponent } from './sound-button/sound-button.component';
 import { SlayerDetailComponent } from './slayer-detail/slayer-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AddSlayerComponent } from './add-slayer/add-slayer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddSlayerComponent } from './add-slayer/add-slayer.component';
     SoundButtonComponent,
     SlayerDetailComponent,
     MessagesComponent,
-    AddSlayerComponent
+    AddSlayerComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

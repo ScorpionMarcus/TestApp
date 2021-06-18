@@ -1,0 +1,6 @@
+<h2>Top Slayers</h2>
+<div class="slayers-menu">
+  <a *ngFor="let slayer of slayers" routerLink="/detail/{{slayer.id}}">
+    {{slayer.name}}
+  </a>
+</div>

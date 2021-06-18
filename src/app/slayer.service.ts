@@ -16,4 +16,12 @@ export class SlayerService {
     this.messageService.add('SlayerService: fetched slayers');
     return slayers;
   }
+
+  getSlayer(id: number): Observable<Slayer> {
+    // For now, assume that a slayer with the specified `id` always exists.
+    // Error handling will be added in the next step of the tutorial.
+    const slayer = SLAYERS.find(h => h.id === id)!;
+    this.messageService.add(`SlayerService: fetched slayer id=${id}`);
+    return of(slayer);
+  }
 }

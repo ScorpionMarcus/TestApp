@@ -2,15 +2,12 @@
 <div class="slayer-container">
   <div class="info">
     <ul class="slayers">
-      <li *ngFor="let slayer of slayers" 
-        [class.selected]="slayer === selectedSlayer"
-        (click)="onSelect(slayer)">
-        <span class="badge">{{slayer.id}}</span> {{slayer.name}}
+      <li *ngFor="let slayer of slayers">
+        <a routerLink="/detail/{{slayer.id}}">
+          <span class="badge">{{slayer.id}}</span> {{slayer.name}}
+        </a>
       </li>
     </ul>
-    <app-slayer-detail [slayer]="selectedSlayer"  class="details"></app-slayer-detail>
-  </div>
-  <div *ngIf="selectedSlayer" class="image-area">
-    <img src="{{selectedSlayer.image}}">
   </div>
 </div>
+<app-add-slayer></app-add-slayer>

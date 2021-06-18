@@ -35,13 +35,15 @@ export class AddSlayerComponent implements OnInit {
   }
 
   onSubmit() {
+    this.toggle();
+
     this.newSlayer.patchValue({
       id: SLAYERS.length + 1
     });
 
     if (this.newSlayer.controls.name.value !== null) {
       SLAYERS.push(this.newSlayer.value);
-      this.messageService.add(`Added slayer named ${this.newSlayer.controls.name.value}`)
+      this.messageService.add(`Slayer added: ${this.newSlayer.controls.name.value}`)
     }
 
     this.newSlayer.reset();

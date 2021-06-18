@@ -21,4 +21,8 @@
       </li>
     </ul>
     <app-sound-button [sound]="slayer.slayerSound"></app-sound-button>
+    <div *ngIf="slayer.image" class="image-area">
+      <img src="{{slayer.image}}">
+    </div>
 </div>
+<button (click)="goBack()">go back</button>

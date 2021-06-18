@@ -1,45 +1,39 @@
 /* SlayersComponent's private CSS styles */
-.slayer-container {
-  display: flex;
-}
-
 .slayers {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-
 .slayers li {
-  cursor: pointer;
   position: relative;
-  left: 0;
+  cursor: pointer;
+}
+
+.slayers li:hover {
+  left: .1em;
+}
+
+.slayers a {
+  color: #333;
+  text-decoration: none;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  display: block;
+  width: 100%;
 }
 
-.slayers li:hover {
+.slayers a:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
-  left: .1em;
 }
 
-.slayers li.selected {
-  background-color: black;
-  color: white;
-}
-
-.slayers li.selected:hover {
-  background-color: #505050;
-  color: white;
-}
-
-.slayers li.selected:active {
-  background-color: black;
-  color: white;
+.slayers a:active {
+  background-color: #525252;
+  color: #fafafa;
 }
 
 .slayers .badge {
@@ -53,14 +47,8 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
-}
-
-input {
-  padding: 0;
-  font-size: 16px;
-  background-color: transparent;
-  border: none;
-  font-weight: 400;
 }
