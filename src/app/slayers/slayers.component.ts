@@ -23,4 +23,18 @@ export class SlayersComponent implements OnInit {
       .subscribe(slayers => this.slayers = slayers);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.slayerService.addSlayer({ name } as Slayer)
+      .subscribe(slayer => {
+        this.slayers.push(slayer);
+      });
+  }
+
+  delete(slayer: Slayer): void {
+    this.slayers = this.slayers.filter(h => h !== slayer);
+    this.slayerService.deleteSlayer(slayer.id).subscribe();
+  }
+
 }

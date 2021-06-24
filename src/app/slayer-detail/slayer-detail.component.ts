@@ -32,4 +32,11 @@ export class SlayerDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    if (this.slayer) {
+      this.slayerService.updateSlayer(this.slayer)
+        .subscribe(() => this.goBack());
+    }
+  }
+
 }

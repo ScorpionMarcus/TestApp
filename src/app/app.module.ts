@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlayersComponent } from './slayers/slayers.component';
 import { SoundButtonComponent } from './sound-button/sound-button.component';
 import { SlayerDetailComponent } from './slayer-detail/slayer-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { AddSlayerComponent } from './add-slayer/add-slayer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SlayerSearchComponent } from './slayer-search/slayer-search.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SoundButtonComponent,
     SlayerDetailComponent,
     MessagesComponent,
-    AddSlayerComponent,
-    DashboardComponent
+    DashboardComponent,
+    SlayerSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

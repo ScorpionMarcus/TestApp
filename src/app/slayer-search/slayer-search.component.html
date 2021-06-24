@@ -1,0 +1,12 @@
+<div id="search-component">
+    <label for="search-box">Slayer Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let slayer of slayers$ | async" >
+        <a routerLink="/detail/{{slayer.id}}">
+          {{slayer.name}}
+        </a>
+      </li>
+    </ul>
+  </div>

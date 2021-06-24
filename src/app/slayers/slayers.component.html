@@ -6,8 +6,18 @@
         <a routerLink="/detail/{{slayer.id}}">
           <span class="badge">{{slayer.id}}</span> {{slayer.name}}
         </a>
+        <button class="delete" title="delete slayer"
+          (click)="delete(slayer)">x</button>
       </li>
     </ul>
   </div>
 </div>
-<app-add-slayer></app-add-slayer>
+<div>
+  <label for="new-slayer">Slayer name: </label>
+  <input id="new-slayer" #slayerName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(slayerName.value); slayerName.value=''">
+    Add slayer
+  </button>
+</div>
